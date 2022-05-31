@@ -1,18 +1,13 @@
-//конкатенация - операция склеивания в одну строку
-//console.log('12.12' + true);
+let number = 7;
 
-let fname = 'Elon';
-const sname = 'Musk';
-const fullName = fname+' '+sname;
+//number = number * 10;
+number *= 10;
 
-let number = 5;
-//number = number + 1;
+//number = number -2;
+number -= 2;
 
-//инкремент - увеличивает значение переменной на 1
-//number++;
-//декремент - уменьшает значение переменной на 1
-//number--;
+let string = '68';
 
-// console.log(number++);
-// console.log(number);
+string /= number;
 
+console.log(string); //
