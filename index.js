@@ -1,35 +1,18 @@
-// console.log("word");
-// console.log(123);
-// console.log(1n);
-// console.log(true);
-// console.log(undefined);
-// console.log(null);
+//конкатенация - операция склеивания в одну строку
+//console.log('12.12' + true);
 
-/*
-начинается только: с буквы  или _  или $
-не должно быть пробелов
-регистрозависимое
-camelCase
-отвечает на вопрос что в ней
-*/
+let fname = 'Elon';
+const sname = 'Musk';
+const fullName = fname+' '+sname;
 
+let number = 5;
+//number = number + 1;
 
-let userAge2 = 3; 
-userAge2 = 5;      
-const userAge3 = 12n;
-userAge2 = 35; 
-console.log(userAge2);
-// userAge3 = 12;
+//инкремент - увеличивает значение переменной на 1
+//number++;
+//декремент - уменьшает значение переменной на 1
+//number--;
 
-{
-  let userAge2 = 456;
-  console.log('in block',userAge2);
-}
+// console.log(number++);
+// console.log(number);
 
-console.log('under block',userAge2);
-
-
-let userName = null;
-console.log(userName);
-userName = 'Elon';
-console.log(userName);
