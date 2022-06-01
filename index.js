@@ -1,10 +1,10 @@
-const userInputStr = prompt('Enter number:', 12);
-const userInputNumber = Number(userInputStr);
+const userInputStr = prompt('Enter number:', 12); //string
+// const userInputNumber = Number(userInputStr);
 
-/*
-if(condition){
-  //true
+//null  ''   NaN
+
+if( userInputStr===null || userInputStr==='' || isNaN( Number(userInputStr) )){
+  console.log('error');
 }else{
-  //false
+  console.log('thanks for ', userInputStr)
 }
-*/
