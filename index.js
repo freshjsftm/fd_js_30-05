@@ -1,30 +1,20 @@
+  
+const isInputNotNumber = function(value){
+  return value===null || value==='' || isNaN(Number(value)) ;
+}  
 
-// const getSumTwoNumber = function(){
-   const userInputNum1 = prompt('Enter first number');
-   const userInputNum2 = prompt('Enter second number');
-
-  const checkUserInput1 = userInputNum1===null || userInputNum1==='' || isNaN(Number(userInputNum1));
-  const checkUserInput2 = userInputNum2===null || userInputNum2==='' || isNaN(Number(userInputNum2));
-
-//   if(checkUserInput1 || checkUserInput2){
-//     console.log('error')
-//   }else{
-//     console.log(Number(userInputNum1)+Number(userInputNum2))
-//   }
-// }
-// getSumTwoNumber()
-
-//let summa;
-const getSumTwoNumber = function(){
-  // const summa = Number(userInputNum1)+Number(userInputNum2);
-  // return summa;
-  return Number(userInputNum1)+Number(userInputNum2);
+const getSumTwoNumber = function(number1, number2){
+  return number1+number2;
 }
 
-//const summa = getSumTwoNumber();
-
-if(checkUserInput1 || checkUserInput2){
-  console.log('error')
-}else{
-  console.log(getSumTwoNumber())
+const logResultInput = function(){
+  const userInputNum1 = prompt('Enter first number');
+  const userInputNum2 = prompt('Enter second number');
+  if(isInputNotNumber(userInputNum1) || isInputNotNumber(userInputNum2)){
+    console.log('error')
+  }else{
+    console.log(getSumTwoNumber(Number(userInputNum1),Number(userInputNum2)))
+  }
 }
+
+logResultInput();
