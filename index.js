@@ -1,35 +1,77 @@
 /**
  * 
- * @param {any} value {null|string|number}
- * @returns {boolean}
- */  
-const isInputNotNumber = function(value){
-  return value===null || value==='' || isNaN(Number(value)) ;
-}  
-/**
- * 
- * @param {any} number1 {string | number} 
- * @param {any} number2 {string | number}
- * @returns {false | number}
+ * @param {any} value1 
+ * @param {any} value2 
+ * @returns {any | null}
  */
-const getSumTwoNumber = function(number1=0, number2=0){
-  if(isInputNotNumber(number1) || isInputNotNumber(number2)){
-    return false;
+const returnMaxOfTwo = function(value1, value2){
+  if(typeof value1 === typeof value2){
+    if(value1>value2){
+      return value1;
+    }
+    return value2;
   }
-  return Number(number1)+Number(number2);
+  return null;
 }
-/**
- * log result summ two numer input user
- */
-const logResultInput = function(){
-  const userInputNum1 = prompt('Enter first number');
-  const userInputNum2 = prompt('Enter second number');
-  const result = getSumTwoNumber(userInputNum1,userInputNum2);
-  if(result===false){
-    console.log('error')
-  }else{
-    console.log(result)
+
+console.log(returnMaxOfTwo(true, 5));
+console.log(returnMaxOfTwo(45, 5));
+console.log(returnMaxOfTwo('45', 5));
+
+
+
+
+const compareTypeOfValue = function (value1, value2) {
+  if( typeof value1 === typeof value2) {
+      return compareTwoValue(value1, value2);
   }
+  return null;
 }
-//debugger
-logResultInput();
+const compareTwoValue = function (value1, value2) {
+  if(value1 > value2) {
+      return value1;
+  } 
+  return value2;
+}
+
+console.log(compareTypeOfValue('h', 'w'));
+console.log(compareTypeOfValue(15, 'w'));
+
+
+
+/*
+const isEven = function (value) {
+   if(value%2===1) {
+       return false;
+   }
+   return true;
+}
+
+console.log(isEven(4));
+console.log(isEven(3));
+*/
+
+/*
+const takeANumber = function (number) {
+  if (number % 2 === 0) {
+    return true
+  }
+  return false
+}
+console.log(takeANumber(10));
+*/
+
+
+/*
+const isNumberEven = function(number){
+  if(number % 2 === 0){
+    return true
+  }
+  return false;
+}
+
+const result = isNumberEven(5);
+console.log(result);
+*/
+
+
