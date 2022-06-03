@@ -1,23 +1,18 @@
-/**
- * 
- * @param {number} a 
- * @param {number} b 
- * @param {number} c 
- * @returns {null | [number]}
- */
-const solveSquareEquation = function (a = 1, b = -2, c = -3) {
-  const D = b * b - 4 * a * c;
-  if (D < 0) {
-    return null;
+const userInputNumber = 12;//prompt("Enter number", "85");
+const userNumber = Number(userInputNumber);
+
+if (userInputNumber === "" || userInputNumber === null || isNaN(userNumber)) {
+  console.log("error");
+} else {
+  if (userNumber % 7 === 0) {
+    console.log("multiple 7");
+  } else if (userNumber % 5 === 0) {
+    console.log("multiple 5");
+  } else if (userNumber % 3 === 0) {
+    console.log("multiple 3");
+  } else if (userNumber % 2 === 0) {
+    console.log("multiple 2");
+  }else{
+    console.log("multiple 1");
   }
-  // if(D===0){
-  //   const x = (-b)/(2*a);
-  //   return [x,x];
-  // }
-  const x1 = ((-b)+ D**0.5)/(2*a);
-  const x2 = ((-b)- D**0.5)/(2*a);
-  return [x1, x2];
-};
-console.log(solveSquareEquation());
-console.log(solveSquareEquation(1,12,36));
-console.log(solveSquareEquation(5,3,7));
+}
