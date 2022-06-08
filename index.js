@@ -1,16 +1,32 @@
-
-const object = {
-  prop1: 'prop value',
-  prop2: 12,
-  'prop 3': true,
-  4:'qwerty',
+/*
+const table = {
+  1:{
+  '1 * 1 = ': 1,
+  '1 * 2 = ': 2,
+  }
 }
-console.log(object['prop 3']);
-console.log(object['prop1']);
-console.log(object.prop1);
-const variable = 4;
-console.log(object[variable]);
-console.log(object[4]);
-debugger
-const variable2 = 'prop2';
-console.log(object[variable2]);
+*/
+
+const obj = {};
+//'1 * 1 = '
+obj.prop = 12;
+//obj.'two words'
+obj['1 * 1 = '] = 1;
+
+function createMultipleTable(){
+  const table = {};
+  for(let i=1; i<=10; i++){
+    for(let j=1; j<=10; j++){
+      table[`${i} * ${j} = `] = i*j;    
+    }
+  }
+  return table;
+}
+
+const multTable = createMultipleTable();
+
+function getValueMult(table, str){
+  return table[str];
+}
+
+console.log(getValueMult(multTable, '3 * 7 = '));
