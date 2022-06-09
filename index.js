@@ -19,15 +19,15 @@ function MyArrayPrototype(){
 }
 MyArray.prototype = new MyArrayPrototype();
 
-const myArr = new MyArray(1,2,3,4,8);
-//myArr.push(11);
-console.log(myArr);
-/*-------------------------*/
-const arr = [1,2,3,54,5,8];
-const arr2 = [];
-arr.push(55);
-arr2.push(55);
-console.log(arr);
+// const myArr = new MyArray(1,2,3,4,8);
+// //myArr.push(11);
+// console.log(myArr);
+// /*-------------------------*/
+// const arr = [1,2,3,54,5,8];
+// const arr2 = [];
+// arr.push(55);
+// arr2.push(55);
+// console.log(arr);
 
 
 
