@@ -1,20 +1,18 @@
-const n1 = 1;
-const n2 = 1;
-
 const obj1 = {
   prop: 123,
 };
-const obj2 = {
+const obj2 = new Object({
   prop: 1,
-};
+});
+const obj3 = Object({
+  prop: 1,
+});
 
-const save = obj1;//копирование по ссылке
+function MyObject() {
+  if (!new.target) {
+    return new MyObject();
+  }
+}
 
-console.log(save.prop);
-save.prop = "hi!";
-
-const link = save;
-link.prop = true;
-
-console.log(save.prop);
-console.log(obj1.prop);
+const myObj = new MyObject();
+console.log(myObj);
