@@ -1,12 +1,33 @@
+/*
+написать функцию конструктор Accumulator
+- текущее состояние заряда
+- максимальный заряд
 
-function sum(){
-  console.log(arguments)
-  let summa = 0;
-  for (let index = 0; index < arguments.length; index++) {
-     summa +=  arguments[index];  
-  }
-  return summa;
+методы:
+написать функцию конструктор AccumulatorPrototype
+зарядить Accumulator          + к текущему заряду
+зарядиться от Accumulator     - к текущему заряду
+
+*/
+
+function Accumulator() {
+  this.maxPower = 1000;
+  this.power = 0;
 }
+function AccumulatorPrototype() {
+  this.addPower = function (number) {
+    if (this.power + number < this.maxPower) {
+      this.power += number;
+    }
+    return this.power;
+  };
+  this.takePower = function (number) {
+    if (this.power - number >= 0) {
+      this.power -= number;
+    }
+    return this.power;
+  };
+}
+Accumulator.prototype = new AccumulatorPrototype();
 
-//sum(1,2,5,4,6);
-
+const battery = new Accumulator();
