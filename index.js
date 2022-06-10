@@ -1,29 +1,23 @@
-function Animal() {
-  this.go = function () {
-    return (this.name ? this.name : "i'm") + " go";
+function Ladder() {
+  this.step = 0;
+}
+function LadderStep() {
+  this.up = function () {
+    this.step++;
+    return this;
   };
-  this.eat = function () {
-    return (this.name ? this.name : "i'm") + " eat";
+  this.down = function () {
+    this.step--;
+    return this;
+  };
+  this.showStep = function () {
+    return this.step;
   };
 }
-function Man() {
-  this.dansing = function (danse) {
-    return (this.name ? this.name : "i'm") + " dansing " + danse;
-  };
-  this.toString = function () {
-    return `${this.name} ${this.sname}`;
-  };
-}
-Man.prototype = new Animal();
+Ladder.prototype = new LadderStep();
 
+const myLadder1 = new Ladder();
+const myLadder2 = new Ladder();
 
-function User(name, sname) {
-  this.name = name;
-  this.sname = sname;
-}
-User.prototype = new Man();
-
-
-const user1 = new User('Elon', 'Musk');
-const user2 = new User('Tim', 'Lee');
-
+console.log(myLadder1.up().up().up().down().up().up().showStep());
+console.log(myLadder2.down().up().up().showStep());
