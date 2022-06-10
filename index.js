@@ -1,23 +1,23 @@
-function Ladder() {
-  this.step = 0;
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
 }
-function LadderStep() {
-  this.up = function () {
-    this.step++;
-    return this;
-  };
-  this.down = function () {
-    this.step--;
-    return this;
-  };
-  this.showStep = function () {
-    return this.step;
-  };
+const arr1 = [];
+const amount = 2;
+const min=0;
+const max=10;
+
+for(let i=0; i<amount; i++){
+  arr1.push(Math.round(getRandomArbitrary(min, max)));
 }
-Ladder.prototype = new LadderStep();
+console.log(arr1);
 
-const myLadder1 = new Ladder();
-const myLadder2 = new Ladder();
+const summa = arr1.reduce(function(accumulator, currentValue){
+  return accumulator+currentValue;
+},0);
+console.log(summa);
+const mult = arr1.reduce(function(accumulator, currentValue){
+  return accumulator*currentValue;
+},1);
+console.log(mult);
 
-console.log(myLadder1.up().up().up().down().up().up().showStep());
-console.log(myLadder2.down().up().up().showStep());
+
