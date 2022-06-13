@@ -1,23 +1,29 @@
-function getRandomArbitrary(min, max) {
-  return Math.random() * (max - min) + min;
+//изменения
+//доступа
+//обхода
+
+//HOF - hight order function
+/**
+ *
+ * @param {function} howSay
+ * @param {string} whatSay
+ */
+function saySomething(howSay, whatSay) {
+  howSay(whatSay);
 }
-const arr1 = [];
-const amount = 2;
-const min=0;
-const max=10;
+// saySomething(alert,'qwerty');
+// saySomething(console.log,'123454');
 
-for(let i=0; i<amount; i++){
-  arr1.push(Math.round(getRandomArbitrary(min, max)));
-}
-console.log(arr1);
+const arr = [10, 20, 30, 40, 50, 60];
 
-const summa = arr1.reduce(function(accumulator, currentValue){
-  return accumulator+currentValue;
-},0);
-console.log(summa);
-const mult = arr1.reduce(function(accumulator, currentValue){
-  return accumulator*currentValue;
-},1);
-console.log(mult);
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] % 4 === 0) {
+//     console.log(arr[i]);
+//   }
+// }
 
-
+arr.forEach(function (num) {
+  if (num % 4 === 0) {
+    console.log(num);
+  }
+});
