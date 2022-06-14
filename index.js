@@ -1,15 +1,13 @@
 "use strict";
 
-function logHeader(header){
-  //console.log(this)
-  console.log(`${header} | ${this.title}`)
-}
+
 const site = {
   title:'green site',
   headers:['Header 1','Header 2','Header 3'],
   showHeaders(){
-    console.log(this)
-    this.headers.forEach(logHeader.bind(this));
+    this.headers.forEach((header)=>{
+      console.log(`${header} | ${this.title}`)
+    });
   }
 }
 
