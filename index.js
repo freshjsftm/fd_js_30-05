@@ -1,42 +1,50 @@
 "use strict";
 
-const f1 = function(num1, num2, ...restArguments){
-  console.log(restArguments)
+/*
+4! = 4*3*2*1 = 4 * 3!
+3! = 3*2*1 = 3 * 2!
+2! = 2*1 = 2 * 1!
+1! = 1                //base
+0! = 1                //base
+*/
+
+const factorial = (num=4) =>{
+  if(num<0){
+    return null;
+  }
+  if(num===1 || num===0){
+    return 1n;
+  }
+  return BigInt(num) * factorial(num-1);
 }
-
-const f2 = (...numbers)=>{  //...rest
-  console.log(numbers)
-  return 12;
-}
-
-// console.dir(f1)
-// console.dir(f2)
-
-f1(1,1,1,1);
-f2(2,2,2,2);
-
-// напишите функцию стрелку, которая
-// считает сумму неограниченного количества аргуметов
-
-const sumNum = (...num) => num.reduce((acum, vol) => acum + vol );
-sumNum(1,2,3,4);
-
-const arrNumbers = [1,10,15];
-
-console.log(...arrNumbers) //...spred
-console.log(arrNumbers[0], arrNumbers[1], arrNumbers[2])
-
-sumNum(...arrNumbers);
+console.log(factorial(3))
 
 
-const arr1 = [2,5,8];
-const arr2 = [12,25,38];
+/*
+2^4 = 2*2*2*2 = 2*2^3
+2^3 = 2*2*2   = 2*2^2
+2^2 = 2*2     = 2*2^1
+2^1 = 2*2^0
+2^0 = 1
+*/
+// const power = (num, pow) =>{
+//   if(pow===0){
+//     return 1;
+//   }
+//   return num *power(num, pow-1);
+// }
+// console.log(power(3, 2)) //9
 
-//const arr3 = arr1.concat(100).concat(arr2);
-const arr3 = [100,...arr1,...arr2,12];
-console.log(arr3);
-
-
-const f = (...qwerty)=>{}
-
-sumNum(...[1,2,3]);
+const power = (num, pow) =>{ 
+  if(pow<0){ 
+    return power(num,pow+1)/num ; 
+    //return 1/num * power(num,pow+1) ; 
+  } 
+  if( pow===0){ 
+    return 1; 
+  }; 
+  if( pow>0){ 
+  return power(num,pow-1)*num 
+}; 
+} 
+console.log(power(2222,22222))
