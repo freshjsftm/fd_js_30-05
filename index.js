@@ -1,21 +1,15 @@
 "use strict";
 
+// const sum = (a, b) => {
+//   return a + b;
+// };
 
-const site = {
-  title:'green site',
-  headers:['Header 1','Header 2','Header 3'],
-  showHeaders(){
-    this.headers.forEach((header)=>{
-      console.log(`${header} | ${this.title}`)
-    });
-  }
-}
+const sum = (a, b) => a + b;
+console.log(sum(5, 7));
 
-site.showHeaders();
+const square = (n) => n * n;
+console.log(square(57));
 
-/*
-1 - arrow function
-2 - const self = this;
-3 - argument for function
-4 - function.bind(this)
-*/
+const logWord = word => console.log(word);
+logWord('qwerty');
+
