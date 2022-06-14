@@ -1,17 +1,21 @@
 "use strict";
 
-function test1(){
-  console.log(this)
+const site = {
+  title:'green site',
+  headers:['Header 1','Header 2','Header 3'],
+  showHeaders(){
+    console.log(this)
+    const self = this;
+    this.headers.forEach(function(header){
+      //console.log(this)
+      console.log(`${header} | ${self.title}`)
+    });
+  }
 }
 
-const test2 = function(){
-  console.log(this)
-}
+site.showHeaders();
 
-const test3 = ()=> {
-  console.log(this)  
-}
-
-test1();
-test2();
-test3();
+/*
+1 - arrow function
+2 - const self = this;
+*/
