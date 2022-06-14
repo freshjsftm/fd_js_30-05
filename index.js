@@ -1,15 +1,16 @@
 "use strict";
 
-// const sum = (a, b) => {
-//   return a + b;
-// };
+const f1 = function(){
+  console.log(arguments)
+}
 
-const sum = (a, b) => a + b;
-console.log(sum(5, 7));
+const f2 = ()=>{
+  console.log(arguments)
+}
 
-const square = (n) => n * n;
-console.log(square(57));
+console.dir(f1)
+console.dir(f2)
 
-const logWord = word => console.log(word);
-logWord('qwerty');
+f1(1,1,1,1);
+f2(2,2,2,2);
 
