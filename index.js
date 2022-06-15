@@ -1,16 +1,9 @@
 "use strict";
 
-const check = new Boolean(false);
+const number = new Number(10.12345);
+console.log(number.toFixed(2));
 
-//console.log(check.valueOf())
+const number2 = 45.451245.toFixed(2);//string
 
-if (check) {
-  console.log("yes");
-  if(check.valueOf()){
-    console.log("true");
-  }else{
-    console.log("false");
-  }
-} else {
-  console.log("no");
-}
+const number3 = 123456.12312.toPrecision(3);
+
