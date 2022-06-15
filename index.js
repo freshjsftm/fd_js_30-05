@@ -13,11 +13,12 @@
 3) массив слов склеить обратно в строку //array.join   
 */
 
-const str = "to-Be-or-NoT-To-bE";
+const str = "to    Be    or NoT     To    bE";
 const toJadenCase = (str, separator = " ") =>
   str
     .split(separator)
+    .filter((word)=> word)
     .map((word) => word.at(0).toUpperCase() + word.slice(1).toLowerCase())
     .join(" ");
 
-console.log(toJadenCase(str,'-'));
+console.log(toJadenCase(str));
