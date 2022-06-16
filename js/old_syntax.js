@@ -10,6 +10,10 @@ User.count = 0; //стастическое свойство
 
 User.createTestUser = ()=> new User('Anonim', 'Amonimus', 22);
 
+User.isUser = function(obj){
+  return obj instanceof User;
+}
+
 function UserPrototype(){
   this.getFullName = () =>{return `${this.fname} ${this.sname}`};
 }

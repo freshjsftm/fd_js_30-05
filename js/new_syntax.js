@@ -7,6 +7,7 @@ class UserClass{
     this.#fname = fname;
     this.#sname = sname;
     this.age = age; //set age(age)
+    UserClass.count++;
   }
   get age(){return this._age;}
   set age(age){
@@ -18,15 +19,23 @@ class UserClass{
     }
     this._age = age;
   }
-  getFullName(){
+  get FullName(){
     return`${this.#fname} ${this.#sname}` 
   };
-  isAdult(adultAge = AGE_ADULT){
-    return this._age>=adultAge;
+  get isAdult(){
+    return this._age>=AGE_ADULT;
+  }
+  static count = 0;
+  static createTestUser(){
+    return new UserClass('Anonim', 'Amonimus', 22);
+  }
+  static isUserClass(obj){
+    return obj instanceof UserClass;
   }
 };
 
 const userNew = new UserClass('Tom','Bon', 18);
 userNew.age = 22;
 console.log(userNew.age)
+//console.dir(UserClass)
 
