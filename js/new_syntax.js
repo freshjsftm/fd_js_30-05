@@ -34,8 +34,8 @@ class UserClass{
   }
 };
 
-const userNew = new UserClass('Tom','Bon', 18);
-userNew.age = 22;
-console.log(userNew.age)
-//console.dir(UserClass)
+// const userNew = new UserClass('Tom','Bon', 18);
+// userNew.age = 22;
+// console.log(userNew.age)
+// //console.dir(UserClass)
 
