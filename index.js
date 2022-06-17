@@ -1,30 +1,60 @@
 "use strict";
 //инкапсуляция
-//наследование
+//наследование - +
 //полиморфизм
 
-class Animal{
-  #type;
-  constructor(name, type, countOfLegs){
-    this.name = name;
-    this.#type = type;
-    this.countOfLegs = countOfLegs;
+class User{
+  //#isBan;
+  constructor(fname, sname){
+    this.fname = fname;
+    this.sname = sname;  
+    this._isBan = false;  
   }
-  get countOfLegs(){
-    return this._countOfLegs;
+  getFullName(){
+    return `${this.fname} ${this.sname}`;
   }
-  set countOfLegs(value){
-    if(value<0 || value>4){
-      throw new RangeError('error');
-    }
-    this._countOfLegs = value;
+  static isUser(obj){
+    return obj instanceof User;
   }
-  eat(){
-    return `${this.name} is eating.`
-  }
-  static isAnimal(obj){
-    return obj instanceof Animal;
+  get isBan(){
+    return this._isBan;
   }
 };
 
-const cat = new Animal('Muha', 'cat', 4);
+class Moderator extends User{
+  constructor(fname, sname, permission){
+    super(fname, sname);    
+    this.permission = permission;
+  }
+};
+
+class Admin extends Moderator{
+  constructor(fname, sname, permission){
+    super(fname, sname, permission);
+  }
+  ban(obj){
+    if(User.isUser(obj)===false){
+      throw new TypeError('must be user!')
+    }
+    obj._isBan = true;
+  }
+  unBan(obj){
+    if(User.isUser(obj)===false){
+      throw new TypeError('must be user!')
+    }
+    obj._isBan = false;
+  }
+};
+
+class Editor extends Moderator{
+  constructor(fname, sname, permission, email){
+    super(fname, sname, permission);
+    this.email = email;
+  }
+}
+
+// const user = new User('Tom', 'Rom');
+// const admin = new Admin('Elon', 'Musk', true);
+// console.log(user.isBan)
+// admin.ban(user);
+// console.log(user.isBan)
