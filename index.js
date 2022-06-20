@@ -1,15 +1,8 @@
 "use strict";
-const mySymbol = Symbol('mark for developer');
-const mySymbol2 = Symbol('123');
-console.log(mySymbol);
 
-const obj1 = {
-  mySymbol:123,
-  [mySymbol]:'qwerty',
-}
+const arr = [1,2,6,3];
 
-console.log(obj1.mySymbol)
-console.log(obj1["mySymbol"])
-console.log(obj1[mySymbol])
+const iterator = arr[Symbol.iterator]()
 
-delete obj1[mySymbol]
+// console.log(iterator)
+// console.log(iterator.next())
