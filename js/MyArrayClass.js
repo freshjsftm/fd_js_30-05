@@ -65,15 +65,6 @@ class MyArrayClass {
   }
   flat(depth = 1) {
     let newMyArr = new MyArrayClass();
-    // for(let i=0; i<this.length; i++){
-    //   const isMyArr = MyArrayClass.isMyArrayClass(this[i]);
-    //   if(isMyArr && depth){
-    //     const subNewMyArray = this[i].flat(depth-1);
-    //     newMyArr = newMyArr.concat(subNewMyArray);
-    //   }else if(this[i] !== undefined){
-    //     newMyArr.push(this[i]);
-    //   }
-    // }
     this.forEach((elem) => {
       if (MyArrayClass.isMyArrayClass(elem) && depth) {
         newMyArr = newMyArr.concat(elem.flat(depth - 1));
@@ -96,15 +87,4 @@ const myArr1 = new MyArrayClass(
   1
 );
 
-console.log(myArr1.flat(2));
-const arr1 = [
-  1,
-  ,
-  ,
-  ,
-  ,
-  [2, 2, , , 2, [3, 3, 3, [4, , , , , 4, 4], 3, 3], 2],
-  1,
-  1,
-  1,
-];
+//console.log(myArr1.flat(2));
