@@ -3,6 +3,7 @@ class LinkedListIterator{
     this.collection = list;
     this.currentItem = null;
   }
+
   next(){
     this.currentItem = this.currentItem ? this.currentItem.next : this.collection.head;
     return {
