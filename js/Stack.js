@@ -15,13 +15,25 @@ class Stack{
     return this._size === 0;
   }
   push(argument){
-    //this['_'+this._size] = argument;
+    if(this._size>=this._maxSize){
+      throw new RangeError('stack overflow')
+    }
     this[`_${this._size}`] = argument;
     return ++this._size;
   }
-  pick(){}
-  pop(){}
+  pick(){
+    return this[`_${this._size-1}`];
+  }
+  pop(){
+    if(this.empty){
+      return;
+    }
+    const last = this[`_${this._size-1}`];
+    delete this[`_${this._size-1}`];
+    --this._size;
+    return last;
+  }
 };
 
-const stack1 = new Stack(5,1,2,3,4,5,6,7,8,9);
-console.log(stack1);
+// const stack1 = new Stack(5,1,2,3,4,5);
+// console.log(stack1);
