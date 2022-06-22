@@ -1,29 +1,36 @@
 "use strict";
-
-const checkBrackets = (str) =>{
-//изначально стек пустой
+const optionsGlobal = {
+  brackets:{
+    '(':')',
+    '[':']',
+    '{':'}',
+  },
+  isStrict:true
+}
+/**
+ * 
+ * @param {string} str 
+ * @param {object} options 
+ * @returns 
+ */
+const checkBrackets = (str, options) =>{
+  const brackets = options.brackets;
   const stack = new Stack(str.length);
-//перебираем символы строки
-  for (const symbol of str) {
-//если символ открывающая скобка - пушим в стек
-    if(symbol === '('){
+  for (const symbol of str) { 
+    if(brackets[symbol]){  
       stack.push(symbol);
+      continue;
     }
-    if(stack.empty){
+    if(brackets[stack.pick()] === symbol){
+      stack.pop();
+    }else if(Object.values(brackets).includes(symbol)){
       return false;
     }
-//если символ закрывающая скобка - пикаем стек и 
-//если на врешине стека парная открывающая - 
-//то удаляем ее из стека   
-    if(symbol === ')' && stack.pick()==='('){
-      stack.pop();
-    }
   }
-//если в конце стек пустой - то последовательность правильная
   return stack.empty;
 } 
 
-console.log(checkBrackets('()()'))
-console.log(checkBrackets('()'))
-console.log(checkBrackets(')()'))
-console.log(checkBrackets('((()'))
+console.log(checkBrackets('45-(2+5)*(3-7)',{brackets:{'(':')'}}))
+console.log(checkBrackets('(8-{[a]*9})', optionsGlobal))
+console.log(checkBrackets(')()',{brackets:{'(':')'}}))
+console.log(checkBrackets('((()',{brackets:{'(':')'}}))
