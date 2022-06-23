@@ -14,23 +14,25 @@ dictionary.set('мова','language');
 dictionary.set('програмування','programming');
 dictionary.set('займатися','engage in');
 
-const str = 'Група студенти ранок субота поїхати 2022 займатися Програмування на Море як мир'; 
-
-const translate = (str, separator=' ') => {
-  return str.toLowerCase()
-    .split(separator)
-    .map((word)=> dictionary.has(word) ? dictionary.get(word) : word )
-    .join(separator);
+for (const iterator of dictionary) {
+  console.log(iterator)
 }
+console.log(dictionary.entries())
 
-//console.log(translate(str))
+const mySet = new Set();//мир, небо
+console.log(mySet);
+// mySet.add(1);
+// mySet.add(4);
+// mySet.add('4');
+// mySet.add([4]);
+// mySet.add({4:4});
 
+//console.log(mySet);
 
-for (const key of dictionary.keys()) {
-  console.log(key)
-}
+const numbers1 = [1,2,3];
+const numbers2 = [2,3,2,5,4,2,5,2,2];
 
-console.log(...dictionary.values())
+//из двух массивов создать третий с уникальными значениями
 
-//создать массив из ключей мапы
-const arrayKeys = [...dictionary.keys()]
+const numbersUnique =[...new Set([...numbers1,...numbers2])]
+
