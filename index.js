@@ -1,38 +1,47 @@
 "use strict";
 
-const dictionary = new Map();
-dictionary.set('мир','peace');
-dictionary.set('небо','sky');
-dictionary.set('людина','man');
-dictionary.set('море','sea');
-dictionary.set('поїхати','go');
-dictionary.set('на','on');
-dictionary.set('як','as');
-dictionary.set('група','group');
-dictionary.set('навчання','teaching');
-dictionary.set('мова','language');
-dictionary.set('програмування','programming');
-dictionary.set('займатися','engage in');
+//деструктуризация - это способ создания переменной
 
-for (const iterator of dictionary) {
-  console.log(iterator)
+const user = {
+  id:1,
+  privateInfo:{
+    fname:"Elon",
+    sname:"Musk",
+    bday:{
+      day:28,
+      month:6,
+      year:1971,
+    },
+    children:['q1','q2','q3','q4'],
+  },
+  contactInfo:{
+    phone:{
+      work:'123-12-45',
+      mobile:'005-002-003',
+    },
+    adress:{
+      town:'ZP',
+      street:'12Avenu',
+      house:45,
+    },
+    mail:'elon@gmail.com'
+  },
+  profession:'director',
+  date:{
+    day:28,
+    month:6,
+    year:1999,    
+  }
 }
-console.log(dictionary.entries())
 
-const mySet = new Set();//мир, небо
-console.log(mySet);
-// mySet.add(1);
-// mySet.add(4);
-// mySet.add('4');
-// mySet.add([4]);
-// mySet.add({4:4});
+//const prof = user.profession;
+const {profession} = user;
 
-//console.log(mySet);
+//const sname = user.privateInfo.sname;
+const {privateInfo:{sname, fname}} = user;
 
-const numbers1 = [1,2,3];
-const numbers2 = [2,3,2,5,4,2,5,2,2];
+// const dayBDay = user.privateInfo.bday.day;
+// const monthBDay = user.privateInfo.bday.month;
 
-//из двух массивов создать третий с уникальными значениями
-
-const numbersUnique =[...new Set([...numbers1,...numbers2])]
-
+const {privateInfo:{bday:{day:dayBDay,month:monthBDay}}} = user;
+const {date:{day:dayDate,month:monthDate}} = user;
