@@ -34,14 +34,13 @@ const user = {
   }
 }
 
+const {privateInfo:{children:[,two]}} = user;
+
 //const prof = user.profession;
-const {profession} = user;
+const {profession, contactInfo:{mail}, ...rest} = user;
 
-//const sname = user.privateInfo.sname;
-const {privateInfo:{sname, fname}} = user;
+const nums = [1,2,3,4,5];
+//const one = nums[0];
+//const [one,,,four] = nums;
+const [one,...restNums] = nums;
 
-// const dayBDay = user.privateInfo.bday.day;
-// const monthBDay = user.privateInfo.bday.month;
-
-const {privateInfo:{bday:{day:dayBDay,month:monthBDay}}} = user;
-const {date:{day:dayDate,month:monthDate}} = user;
