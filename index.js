@@ -23,4 +23,14 @@ const translate = (str, separator=' ') => {
     .join(separator);
 }
 
-console.log(translate(str))
+//console.log(translate(str))
+
+
+for (const key of dictionary.keys()) {
+  console.log(key)
+}
+
+console.log(...dictionary.values())
+
+//создать массив из ключей мапы
+const arrayKeys = [...dictionary.keys()]
